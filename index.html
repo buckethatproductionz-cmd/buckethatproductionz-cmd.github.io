@@ -1,5 +1,58 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GTA Clipper</title><style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#222;background:#fff}a{color:#0b63c5}</style></head><body><p><a href="/">Home</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a></p>
-<h1>GTA Clipper</h1>
-<p>GTA Clipper is a personal tool run by the owner of the Best Streamer Clips accounts. It cuts short vertical highlight clips from gaming livestreams and publishes them to the owner's own YouTube, Instagram and TikTok accounts.</p>
-<p>It is not a public service: only the owner's own accounts are connected, and no other users sign in to it.</p>
-<p>Contact: <a href="https://github.com/buckethatproductionz-cmd">github.com/buckethatproductionz-cmd</a></p></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTA Clipper</title>
+<meta name="description" content="GTA Clipper turns long gaming livestreams into short vertical highlight clips with captions and publishes them to YouTube Shorts, Instagram Reels and TikTok.">
+<link rel="icon" type="image/png" href="/icon.png"><link rel="apple-touch-icon" href="/icon.png">
+<style>
+:root{--bg:#13111c;--card:#1d1a29;--text:#f2f0f7;--muted:#b4afc4;--pink:#ff2d78;--gold:#ffc83d}
+*{box-sizing:border-box}body{margin:0;font:16px/1.6 system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text)}
+a{color:var(--gold)}nav,main,footer{max-width:960px;margin:0 auto;padding:0 16px}
+nav{display:flex;align-items:center;gap:12px;padding-top:20px;padding-bottom:20px;flex-wrap:wrap}nav .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--text);text-decoration:none;margin-right:auto}
+nav img{width:36px;height:36px;border-radius:8px}nav a{text-decoration:none}
+.hero{display:flex;gap:32px;align-items:center;padding:40px 0;flex-wrap:wrap}.hero img{width:180px;height:180px;border-radius:32px}
+.hero div{flex:1;min-width:260px}h1{font-size:40px;line-height:1.15;margin:0 0 12px}h2{font-size:26px;margin:48px 0 16px}
+.lead{color:var(--muted);font-size:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border-radius:12px;padding:20px}.card h3{margin:0 0 8px;color:var(--pink)}.card p{margin:0;color:var(--muted)}
+ol li{margin-bottom:8px}footer{color:var(--muted);padding-top:48px;padding-bottom:40px;font-size:14px}
+</style></head><body>
+<nav><a class="brand" href="/"><img src="/icon.png" alt="">GTA Clipper</a><a href="#how">How it works</a><a href="#platforms">Platforms</a><a href="#faq">FAQ</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a></nav>
+<main>
+<section class="hero"><img src="/icon.png" alt="GTA Clipper icon"><div>
+<h1>Livestream highlights, cut and posted for you.</h1>
+<p class="lead">GTA Clipper finds the best moments in long gaming livestreams, turns them into short vertical clips with captions, and publishes them to YouTube Shorts, Instagram Reels and TikTok.</p>
+</div></section>
+
+<h2>Features</h2>
+<div class="grid">
+<div class="card"><h3>Moment detection</h3><p>Transcribes the whole stream and scores laughter, shouting, chat activity and on-screen action to find clip-worthy moments.</p></div>
+<div class="card"><h3>Vertical editing</h3><p>Reframes 16:9 stream footage to 9:16 so clips fill a phone screen.</p></div>
+<div class="card"><h3>Word-timed captions</h3><p>Burns in readable captions timed to each spoken word, checked against the transcript.</p></div>
+<div class="card"><h3>Review before posting</h3><p>Every clip is approved by a person before it is queued. Nothing is posted without that approval.</p></div>
+<div class="card"><h3>Scheduled publishing</h3><p>Approved clips are posted on a schedule through each platform's official API, with a title and caption for each platform.</p></div>
+<div class="card"><h3>TikTok drafts</h3><p>On TikTok, clips are sent to the creator's inbox as drafts, so the creator reviews and posts them in the TikTok app.</p></div>
+</div>
+
+<h2 id="how">How it works</h2>
+<ol>
+<li><strong>Add a stream.</strong> Paste a link to a finished Twitch or YouTube livestream VOD.</li>
+<li><strong>Analyse.</strong> GTA Clipper downloads the VOD, transcribes it and ranks candidate moments.</li>
+<li><strong>Pick and approve.</strong> The best moments are cut, captioned and shown for review. Only approved clips continue.</li>
+<li><strong>Connect accounts.</strong> The creator signs in with YouTube, Instagram and TikTok through each platform's official login and grants posting permission.</li>
+<li><strong>Publish.</strong> Clips go out on a schedule. TikTok clips arrive as drafts in the creator's TikTok inbox to finish and post.</li>
+</ol>
+
+<h2 id="platforms">Platforms and permissions</h2>
+<div class="grid">
+<div class="card"><h3>TikTok</h3><p>Uses Login Kit and the Content Posting API (<code>user.info.basic</code>, <code>video.upload</code>, <code>video.publish</code>) to send clips to the connected account.</p></div>
+<div class="card"><h3>YouTube</h3><p>Uses the YouTube Data API to upload Shorts to the connected channel.</p></div>
+<div class="card"><h3>Instagram</h3><p>Uses the Instagram Graph API to publish Reels to the connected professional account.</p></div>
+</div>
+<p>Access can be revoked at any time from each platform's connected-apps settings. See the <a href="/privacy.html">Privacy Policy</a> for exactly what data is used and how.</p>
+
+<h2 id="faq">FAQ</h2>
+<p><strong>Does GTA Clipper post without my approval?</strong><br>No. Every clip is reviewed before it is queued, and TikTok clips arrive as drafts you post yourself.</p>
+<p><strong>What does it store?</strong><br>Only the sign-in tokens each platform issues and the clips being published. It does not collect data about viewers. Details are in the <a href="/privacy.html">Privacy Policy</a>.</p>
+<p><strong>Who owns the content?</strong><br>The person connecting an account is responsible for having the rights to everything they publish. See the <a href="/terms.html">Terms of Service</a>.</p>
+<p><strong>How do I contact you?</strong><br>Through <a href="https://github.com/buckethatproductionz-cmd">github.com/buckethatproductionz-cmd</a>.</p>
+</main>
+<footer>© 2026 GTA Clipper · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a><br>GTA Clipper is an independent tool and is not affiliated with or endorsed by Rockstar Games, Take-Two Interactive, TikTok, YouTube, Google, Instagram or Meta.</footer>
+</body></html>
